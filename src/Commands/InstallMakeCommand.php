@@ -2,6 +2,7 @@
 
 namespace Hanafalah\WellmedLiteStarterpack\Commands;
 
+use Hanafalah\MicroTenant\Facades\MicroTenant;
 use Hanafalah\WellmedLiteStarterpack\Concerns\HasComposer;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\DB;

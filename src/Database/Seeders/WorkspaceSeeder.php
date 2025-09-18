@@ -29,14 +29,15 @@ class WorkspaceSeeder extends Seeder{
         $generator_config = config('laravel-package-generator');
         $project_namespace = 'Projects';
         $group_namespace   = 'WellmedLite';
-
         if (!isset($workspace)){
             $tenant_namespace  = 'WellmedLiteGroup';
 
             $db_tenant_name = config('micro-tenant.database.database_tenant_name');
+            $default = config('tenancy.database.central_connection');
             config([
                 'tenancy.database.prefix' => 'lite_',
-                'tenancy.database.suffix' => ''
+                'tenancy.database.suffix' => '',
+                'tenancy.database.central_connection' => 'central_app'
             ]);
 
             $tenant_schema  = app(config('app.contracts.Tenant'));
@@ -56,7 +57,8 @@ class WorkspaceSeeder extends Seeder{
             $database_tenant_name = config('micro-tenant.database.central_tenant');
             config([
                 'tenancy.database.prefix' => $database_tenant_name['prefix'],
-                'tenancy.database.suffix' => $database_tenant_name['suffix']
+                'tenancy.database.suffix' => $database_tenant_name['suffix'],
+                'tenancy.database.central_connection' => 'central_tenant'
             ]);
 
             $group_tenant = $tenant_schema->prepareStoreTenant($this->requestDTO(TenantData::class,[
@@ -73,7 +75,8 @@ class WorkspaceSeeder extends Seeder{
             ]));
             config([
                 'tenancy.database.prefix' => $db_tenant_name['prefix'],
-                'tenancy.database.suffix' => $db_tenant_name['suffix']
+                'tenancy.database.suffix' => $db_tenant_name['suffix'],
+                'tenancy.database.central_connection' => $default
             ]);
 
             $workspace = app(config('app.contracts.Workspace'))->prepareStoreWorkspace(WorkspaceData::from([
@@ -114,7 +117,7 @@ class WorkspaceSeeder extends Seeder{
                 'app'      => ['provider' => $project_tenant->provider],
                 'group'    => ['provider' => $group_tenant->provider],
                 'packages' => [],
-                'config'   => $generator_config['patterns']['tenant'],
+                'config'   => $generator_config['patterns']['tenant']
             ]));
             $tenant->db_name = $tenant->tenancy_db_name;
             $tenant->save();
