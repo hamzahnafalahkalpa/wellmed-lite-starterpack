@@ -126,7 +126,6 @@ class WorkspaceSeeder extends Seeder{
             $group_tenant   = $tenant->parent;
             $project_tenant = $group_tenant->parent;
         }
-
         $tenant_path = $generator_config['patterns']['tenant']['published_at'];
 
         $providers = config('wellmed-lite-starterpack.packages');
