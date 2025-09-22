@@ -162,48 +162,48 @@ class WorkspaceSeeder extends Seeder{
         $project_tenant->setAttribute('packages',$package_providers);
         $project_tenant->save();
 
-        $composer = $tenant_path.'/'.Str::kebab($tenant->name).'/composer.json';
-        if (!file_exists($composer)){
-            Artisan::call('micro:add-package',[
-                'namespace' => $group_namespace.'\\'.Str::studly($tenant->name),
-                '--package-author' => 'Hamzah Nur Alfalah',
-                '--package-email' => 'hamzahnafalah@gmail.com',
-                '--pattern' => 'tenant',
-                '--main-id' => $tenant->getKey()
-            ]);
-        }
+        // $composer = $tenant_path.'/'.Str::kebab($tenant->name).'/composer.json';
+        // if (!file_exists($composer)){
+        //     Artisan::call('micro:add-package',[
+        //         'namespace' => $group_namespace.'\\'.Str::studly($tenant->name),
+        //         '--package-author' => 'Hamzah Nur Alfalah',
+        //         '--package-email' => 'hamzahnafalah@gmail.com',
+        //         '--pattern' => 'tenant',
+        //         '--main-id' => $tenant->getKey()
+        //     ]);
+        // }
 
-        if (config('app.env') == 'local'){
-            file_put_contents(__DIR__.'/../../tenant-repositories.json', json_encode($repositories, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
-            $this->updateComposer($composer, __DIR__.'/../../tenant-repositories.json','repositories');
-        }
+        // if (config('app.env') == 'local'){
+        //     file_put_contents(__DIR__.'/../../tenant-repositories.json', json_encode($repositories, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
+        //     $this->updateComposer($composer, __DIR__.'/../../tenant-repositories.json','repositories');
+        // }
 
-        $composer = $group_tenant->path.'/'.Str::kebab($group_tenant->name).'/composer.json';
-        if (!file_exists($composer)){
-            Artisan::call('micro:add-package',[
-                'namespace' => $group_namespace.'\\'.Str::studly($group_tenant->name),
-                '--package-author' => 'Hamzah Nur Alfalah',
-                '--package-email' => 'hamzahnafalah@gmail.com',
-                '--pattern' => 'group',
-                '--main-id' => $group_tenant->getKey()
-            ]);
-        }
+        // $composer = $group_tenant->path.'/'.Str::kebab($group_tenant->name).'/composer.json';
+        // if (!file_exists($composer)){
+        //     Artisan::call('micro:add-package',[
+        //         'namespace' => $group_namespace.'\\'.Str::studly($group_tenant->name),
+        //         '--package-author' => 'Hamzah Nur Alfalah',
+        //         '--package-email' => 'hamzahnafalah@gmail.com',
+        //         '--pattern' => 'group',
+        //         '--main-id' => $group_tenant->getKey()
+        //     ]);
+        // }
 
-        $composer = $project_tenant->path.'/'.Str::kebab($project_tenant->name).'/composer.json';
-        if (!file_exists($composer)){
-            Artisan::call('micro:add-package',[
-                'namespace' => $project_namespace.'\\'.$group_namespace,
-                '--package-author' => 'Hamzah Nur Alfalah',
-                '--package-email' => 'hamzahnafalah@gmail.com',
-                '--pattern' => 'project',
-                '--main-id' => $project_tenant->getKey()
-            ]);
-        }
+        // $composer = $project_tenant->path.'/'.Str::kebab($project_tenant->name).'/composer.json';
+        // if (!file_exists($composer)){
+        //     Artisan::call('micro:add-package',[
+        //         'namespace' => $project_namespace.'\\'.$group_namespace,
+        //         '--package-author' => 'Hamzah Nur Alfalah',
+        //         '--package-email' => 'hamzahnafalah@gmail.com',
+        //         '--pattern' => 'project',
+        //         '--main-id' => $project_tenant->getKey()
+        //     ]);
+        // }
         
-        if (config('app.env') == 'local'){
-            file_put_contents(__DIR__.'/../../project-requirements.json', json_encode($requires, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
-            $this->updateComposer($composer, __DIR__.'/../../project-requirements.json','require');
-        }
+        // if (config('app.env') == 'local'){
+        //     file_put_contents(__DIR__.'/../../project-requirements.json', json_encode($requires, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
+        //     $this->updateComposer($composer, __DIR__.'/../../project-requirements.json','require');
+        // }
 
         // shell_exec("cd $tenant_path/".Str::kebab($tenant->name)." && rm -rf composer.lock && composer install");
         MicroTenant::tenantImpersonate($tenant);
