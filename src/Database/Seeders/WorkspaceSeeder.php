@@ -158,6 +158,7 @@ class WorkspaceSeeder extends Seeder{
                 $requires['require'][Str::kebab($original)] = 'dev-main as 1.0'; 
             }
         }
+        
         $project_tenant->setAttribute('packages',$package_providers);
         $project_tenant->save();
 

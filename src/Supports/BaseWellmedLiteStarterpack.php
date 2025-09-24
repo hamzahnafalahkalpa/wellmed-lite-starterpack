@@ -7,7 +7,7 @@ use Hanafalah\LaravelSupport\Supports\PackageManagement;
 class BaseWellmedLiteStarterpack extends PackageManagement
 {
     /** @var array */
-    protected $__klinik_starterpack_config = [];
+    protected $__wellmed_lite_starterpack_config = [];
 
     /**
      * A description of the entire PHP function.
@@ -18,6 +18,6 @@ class BaseWellmedLiteStarterpack extends PackageManagement
      */
     public function __construct()
     {
-        $this->setConfig('klinik_starterpack', $this->__klinik_starterpack_config);
+        $this->setConfig('wellmed_lite_starterpack', $this->__wellmed_lite_starterpack_config);
     }
 }

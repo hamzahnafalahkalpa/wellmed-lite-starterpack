@@ -50,9 +50,9 @@ class InstallMakeCommand extends EnvironmentCommand
             }
         }
         
-        $this->call('micro:install',[
-            "--skip-generate" => true
-        ]);
+        // $this->call('micro:install',[
+        //     "--skip-generate" => true
+        // ]);
 
         $provider = 'Hanafalah\WellmedLiteStarterpack\WellmedLiteStarterpackServiceProvider';
         $this->comment('Installing Module...');
