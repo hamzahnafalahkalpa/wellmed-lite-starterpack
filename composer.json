@@ -23,6 +23,7 @@
     },
     "require": {
         "hanafalah/klinik-starterpack": "dev-main",
-        "hanafalah/laravel-support": "dev-main"
+        "hanafalah/laravel-support": "dev-main",
+        "hanafalah/wellmed-feature": "dev-main"
     }
 }
