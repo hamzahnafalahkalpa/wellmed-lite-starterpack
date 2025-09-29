@@ -51,6 +51,9 @@ class WorkspaceSeeder extends Seeder{
                 'provider'       => $project_namespace.'\\WellmedLite\\Providers\\WellmedLiteServiceProvider',
                 'path'           => $generator_config['patterns']['project']['published_at'],
                 'packages'       => [],
+                'has_group'      => true,
+                'has_tenant'     => true,
+                'product_type'   => 'WELLMED_LITE',
                 'config'         => $generator_config['patterns']['project']
             ]));
 
@@ -70,6 +73,8 @@ class WorkspaceSeeder extends Seeder{
                 'provider'       => $group_namespace.'\\GroupInitialWellmedLite\\Providers\\GroupInitialWellmedLiteServiceProvider',
                 'app'            => ['provider' => $project_tenant->provider],
                 'path'           => $generator_config['patterns']['group']['published_at'],
+                'has_tenant'     => true,
+                'product_type'   => 'WELLMED_LITE',
                 'packages'       => [],
                 'config'         => $generator_config['patterns']['group']
             ]));
@@ -83,6 +88,7 @@ class WorkspaceSeeder extends Seeder{
                 'uuid'    => '9e7ff0f6-7679-46c8-ac3e-71da818160ee',
                 'name'    => 'Wellmed Lite',
                 'status'  => Status::ACTIVE->value,
+                'product_type'   => 'WELLMED_LITE',
                 'props'   => WorkspacePropsData::from([
                     'setting' => WorkspaceSettingData::from([
                         'address' => AddressData::from([
