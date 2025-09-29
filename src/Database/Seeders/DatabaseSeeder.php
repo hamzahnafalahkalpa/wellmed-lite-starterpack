@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
                 WorkspaceSeeder::class,
                 ApiAccessSeeder::class,
                 MasterFeatureSeeder::class,
-                // PermissionSeeder::class,
+                PermissionSeeder::class,
                 RoleSeeder::class,
                 EncodingSeeder::class,
                 MasterSeeder::class
