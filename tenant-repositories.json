@@ -238,13 +238,6 @@
                 "symlink": true
             }
         },
-        "hanafalah/module-medical-procurement": {
-            "type": "path",
-            "url": "../../../repositories/module-medical-procurement",
-            "options": {
-                "symlink": true
-            }
-        },
         "hanafalah/module-disease": {
             "type": "path",
             "url": "../../../repositories/module-disease",
