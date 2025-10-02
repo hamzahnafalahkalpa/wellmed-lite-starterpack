@@ -14,7 +14,6 @@ class DatabaseSeeder extends Seeder
     {
         try {
             \Illuminate\Support\Facades\Artisan::call('telescope:pause');
-
             $this->call([
                 WorkspaceSeeder::class,
                 ApiAccessSeeder::class,

@@ -116,7 +116,7 @@ class WorkspaceSeeder extends Seeder{
                 'reference_id'   => $workspace->getKey(),
                 'reference_type' => $workspace->getMorphClass(),
                 'domain'         => [
-                    'name' => 'localhost:8005'
+                    'domain' => 'localhost:8005'
                 ],
                 'provider' => $tenant_namespace.'\\TenantWellmedLite\\Providers\\TenantWellmedLiteServiceProvider',
                 'path'     => $generator_config['patterns']['tenant']['published_at'],
@@ -213,7 +213,7 @@ class WorkspaceSeeder extends Seeder{
 
         // shell_exec("cd $tenant_path/".Str::kebab($tenant->name)." && rm -rf composer.lock && composer install");
         MicroTenant::tenantImpersonate($tenant);
-        tenancy()->initialize($tenant->getKey());
+        tenancy()->initialize($tenant);
 
         Artisan::call('impersonate:cache',[
             '--app_id'    => $project_tenant->getKey(),
