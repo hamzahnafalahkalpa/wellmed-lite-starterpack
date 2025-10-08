@@ -68,10 +68,10 @@ class InstallMakeCommand extends EnvironmentCommand
         ]);
         $this->info('✔️  Created migrations');
 
-        $this->call('down');
+        // $this->call('down');
         $this->call('migrate');
         $this->call('db:seed');
-        $this->call('up');
+        // $this->call('up');
         $this->info('Wellmed Lite Starterpack Seeding');
         $this->call('wellmed-lite-starterpack:seed');
         $this->info('✔️  Wellmed Lite Starterpack Seeded');
