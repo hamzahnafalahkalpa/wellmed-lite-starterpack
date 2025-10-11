@@ -212,8 +212,9 @@ class WorkspaceSeeder extends Seeder{
         // }
 
         // shell_exec("cd $tenant_path/".Str::kebab($tenant->name)." && rm -rf composer.lock && composer install");
-        MicroTenant::tenantImpersonate($tenant);
-        tenancy()->initialize($tenant);
+        // tenancy()->end();
+        // MicroTenant::tenantImpersonate($tenant);
+        // tenancy()->initialize($tenant);
 
         Artisan::call('impersonate:cache',[
             '--app_id'    => $project_tenant->getKey(),
@@ -227,5 +228,9 @@ class WorkspaceSeeder extends Seeder{
             '--group_id'  => $group_tenant->getKey(),
             '--tenant_id' => $tenant->getKey()
         ]);
+
+        tenancy()->end();
+        MicroTenant::tenantImpersonate($tenant);
+        tenancy()->initialize($tenant);
     }
 }

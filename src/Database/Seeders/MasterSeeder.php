@@ -49,19 +49,20 @@ class MasterSeeder extends Seeder{
                 KlinikStarterpack\TrademarkSeeder::class,
                 KlinikStarterpack\UsageLocationSeeder::class,
                 KlinikStarterpack\UsageRouteSeeder::class,
-                // KlinikStarterpack\RoomItemCategorySeeder::class,
                 ItemCollectionSeeder::class,
-                // KlinikStarterpack\ClassRoomSeeder::class,
                 KlinikStarterpack\BrandSeeder::class,
                 KlinikStarterpack\InfrastructureSeeder::class,
+                MasterInformedConsentSeeder::class
+
+                // KlinikStarterpack\RoomItemCategorySeeder::class,
+                // KlinikStarterpack\ClassRoomSeeder::class,
                 // KlinikStarterpack\PurchaseLabelSeeder::class,
                 // KlinikStarterpack\SampleSeeder::class,
                 // KlinikStarterpack\ClinicalPathologySeeder::class,
                 // KlinikStarterpack\RadiologySeeder::class,
                 // KlinikStarterpack\ProgramCategorySeeder::class,
                 // KlinikStarterpack\ProgramOccupationSeeder::class,
-                MasterInformedConsentSeeder::class
                 // KlinikStarterpack\ScreeningSeeder::class
-        ]);
+            ]);
     }
 }

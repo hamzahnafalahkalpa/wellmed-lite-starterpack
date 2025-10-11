@@ -87,5 +87,6 @@ return [
         'hanafalah/module-physical-examination' => ['repository' =>'hamzahnafalahkalpa/module-physical-examination'],
         'hanafalah/module-pharmacy'             => ['repository' =>'hamzahnafalahkalpa/module-pharmacy'],
         'hanafalah/module-tax'                  => ['repository' =>'hamzahnafalahkalpa/module-tax'],
+        'hanafalah/satu-sehat'                  => ['repository' =>'hamzahnafalahkalpa/satu-sehat']
     ]
 ];
