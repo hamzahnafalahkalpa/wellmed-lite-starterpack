@@ -6,8 +6,7 @@ use Hanafalah\KlinikStarterpack\Database\Seeders as KlinikStarterpack;
 use Hanafalah\ModuleEmployee\Seeders\EmployeeTypeSeeder;
 use Hanafalah\ModuleExamination\Seeders\{
     ExaminationStuffSeeder,
-    MasterVaccineSeeder,
-    FormSeeder
+    MasterVaccineSeeder
 };
 use Hanafalah\ModulePeople\Database\Seeders\DatabaseSeeder as PeopleCollectionSeeder;
 use Hanafalah\ModuleAnatomy\Database\Seeders\DatabaseSeeder as AnatomyCollectionSeeder;
