@@ -24,38 +24,44 @@ class FormSeeder extends Seeder{
         $forms = [
             $this->modelMorph('AdministrationVitaminA') => [
                 'name'    => 'Pemberian Vitamin A',
+                'ordering' => 1,
                 'type'    => 'Plan'
             ],
             $this->modelMorph('Allergy') => [
                 'name' => 'Riwayat Alergi Pasien',
+                'ordering' => 3,
                 'type' => 'Subjective'
             ],
             $this->modelMorph('Alloanamnese') => [
                 'name' => 'Alloanamnese',
+                'ordering' => 1,
                 'type' => 'Subjective'
             ],
             $this->modelMorph('ANCTerpadu') => [
                 'name'    => 'ANC TERPADU',
-                'type'    => 'Subjeivect',
+                'type'    => 'Subjective',
                 'form_has_survey' => [
                     "survey" => include(__DIR__ . '/data/forms/ANCTerpadu.php')
                 ]
             ],
             $this->modelMorph('Anthropometry') => [
                 'name' => 'Anthropometry',
+                'ordering' => 2,
                 'type'    => 'Objective'
             ],
             $this->modelMorph('AudiometriTest') => [
                 'name' => 'Tes Audiometri',
+                'ordering' => 3,
                 'type'    => 'Objective'
             ],
             $this->modelMorph('BloodSugarTest') => [
                 'name' => 'Tes Gula Darah',
+                'ordering' => 3,
                 'type'    => 'Plan'
             ],
             $this->modelMorph('ChildAndPregnancyHistory') => [
                 'name' => 'Anak dan Riwayat Persalinan',
-                'type'    => 'Subjeivect'
+                'type'    => 'Subjective'
             ],
             $this->modelMorph('ChildGrowth') => [
                 'name' => 'Tumbuh Kembang Anak',
