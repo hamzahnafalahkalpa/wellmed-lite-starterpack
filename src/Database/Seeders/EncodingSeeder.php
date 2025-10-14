@@ -2,9 +2,13 @@
 
 namespace Hanafalah\WellmedLiteStarterpack\Database\Seeders;
 
+use Hanafalah\LaravelSupport\Concerns\Support\HasRequest;
+use Hanafalah\LaravelSupport\Concerns\Support\HasRequestData;
 use Illuminate\Database\Seeder;
 
 class EncodingSeeder extends Seeder{
+    use HasRequestData;
+
     /**
      * Seed the application's database.
      *
@@ -14,18 +18,16 @@ class EncodingSeeder extends Seeder{
     {
         $workspace  = app(config('database.models.Workspace'))->uuid('9e7ff0f6-7679-46c8-ac3e-71da818160ee')->firstOrFail();        
         foreach (config('module-encoding.encodings') as $encoding) {
-            $encoding = app(config('database.models.Encoding'))
-                        ->firstOrCreate([
-                            'flag' => $encoding['flag'],
-                        ],[
-                            'name' => $encoding['name']
-                        ]);
-
-            $workspace->modelHasEncoding()->firstOrCreate([
-                'reference_id'   => $workspace->getKey(),
-                'reference_type' => $workspace->getMorphClass(),
-                'encoding_id'    => $encoding->getKey()
-            ]);
+            app(config('app.contracts.Encoding'))->prepareStoreEncoding(
+                $this->requestDTO(config('app.contracts.EncodingData'),[
+                    'label' => $encoding['label'],
+                    'name' => $encoding['name'],
+                    'model_has_encoding' => [
+                        'reference_id' => $workspace->getKey(),
+                        'reference_type' => $workspace->getMorphClass()
+                    ]
+                ])
+            );
         }
     }
 }
