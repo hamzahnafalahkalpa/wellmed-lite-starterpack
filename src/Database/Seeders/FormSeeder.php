@@ -49,161 +49,136 @@ class FormSeeder extends Seeder{
                 'ordering' => 2,
                 'type'    => 'Objective'
             ],
-            $this->modelMorph('AudiometriTest') => [
-                'name' => 'Tes Audiometri',
-                'ordering' => 3,
-                'type'    => 'Objective'
-            ],
-            $this->modelMorph('BloodSugarTest') => [
-                'name' => 'Tes Gula Darah',
-                'ordering' => 3,
-                'type'    => 'Plan'
-            ],
-            $this->modelMorph('ChildAndPregnancyHistory') => [
-                'name' => 'Anak dan Riwayat Persalinan',
-                'type'    => 'Subjective'
-            ],
-            $this->modelMorph('ChildGrowth') => [
-                'name' => 'Tumbuh Kembang Anak',
-                'type'    => 'Objective',
-                'form_has_survey' => [
-                    "survey" => include(__DIR__ . '/data/forms/ChildGrowth.php')
-                ]
-            ],
-            $this->modelMorph('EarExamination') => [
-                'name' => 'Pemeriksaan Telinga',
-                'type'    => 'Objective'
-            ],
-            $this->modelMorph('EyeExamination') => [
-                "name" => "Pemeriksaan Mata Lengkap",
-                'type'    => 'Objective'
-            ],
-            $this->modelMorph('EyeRefractionExamination') => [
-                "name" => "Refraksi Mata",
-                'type'    => 'Objective'
-            ],
-            $this->modelMorph('EyeVisionColor') => [
-                "name" => "Pemeriksaan matan dan Color Vision",
-                'type'    => 'Objective'
-            ],
-            $this->modelMorph('FamilyPlanningService') => [
-                "name" => "Pelayanan KB",
-                'type'    => 'Plan'
-            ],
-            $this->modelMorph('Partus') => [
-                "name" => "Persalinan",
-                'type'    => 'Objective',
-                'form_has_survey' => [
-                    "survey" => include(__DIR__ . '/data/forms/Partus.php')
-                ]
-            ],
-            $this->modelMorph('GCS') => [
-                'name' => 'Glasgow Coma Scale',
-                'type' => 'Objective'
-            ],
-            $this->modelMorph('HearingFunction') => [
-                'name'    => 'PEMERIKSAAN FUNGSI PENDENGARAN',
-                'type' => 'Objective',
-                'form_has_survey' => [
-                    "survey" => include(__DIR__ . '/data/forms/HearingFunction.php')
-                ]
-            ],
-            $this->modelMorph('HearingLossHistory') => [
-                'name' => 'Gangguan Pendengaran',
-                'type' => 'Objective'
-            ],
-            $this->modelMorph('HemoglobinTest') => [
-                "name" => "Pemeriksaan Hemoglobin (HB)",
-                'type' => 'Objective'
-            ],
-            $this->modelMorph('ImmunizationHistory') => [
-                "name" => "Riwayat Imunisasi",
-                'type' => 'Objective'
-            ],
-            $this->modelMorph('LarynxExamination') => [
-                'name' => 'Pemeriksaan Laring',
-                'type' => 'Objective'
-            ],
-            $this->modelMorph('MorseFallScale') => [
-                "name" => "Risiko Jatuh (Morse Fall Scale)",
-                'type' => 'Objective',
-                'form_has_survey' => [
-                    "survey" => include(__DIR__ . '/data/forms/MorseFallScale.php')
-                ]
-            ],
-            $this->modelMorph('MouthCavity') => [
-                'name'    => 'KEADAAN RONGGA MULUT',
-                'type'    => 'Objective',
-                'form_has_survey' => [
-                    "survey" => include(__DIR__ . '/data/forms/MouthCavity.php')
-                ]
-            ],
-            $this->modelMorph('MouthCavityOther') => [
-                'name'    => 'KEADAAN GUSI, KEBERSIHAN GIGI,DAN KONDISI LAINNYA',
-                'type'    => 'Objective',
-                'form_has_survey' => [
-                    "survey" => include(__DIR__ . '/data/forms/MouthCavityOther.php')
-                ]
-            ],
-            $this->modelMorph('NeonatalEsensial') => [
-                "name" => "Neonatal Esential",
-                'type'    => 'Objective',
-                'form_has_survey' => [
-                    "survey" => include(__DIR__ . '/data/forms/NeonatalEsensial.php')
-                ] 
-            ],
-            $this->modelMorph('NewBornCheckUp') => [
-                'name'    => 'PEMERIKSAAN BAYI BARU LAHIR',
-                'type'    => 'Objective',
-                'form_has_survey' => [
-                    "survey" => include(__DIR__ . '/data/forms/NewBornCheckUp.php')
-                ]
-            ],
-            $this->modelMorph('NoseExamination') => [
-                'name' => 'Pemeriksaan Hidung',
-                'type'    => 'Objective'
-            ],
-            $this->modelMorph('Odontogram') => [
-                'name' => 'Odontogram',
-                'type'    => 'Objective'
-            ],
-            $this->modelMorph('POPMHistory') => [
-                "name" => "Pemberian obat pencegahan massal cacingan (POPM)",
-                'type'    => 'Objective'
-            ],
+            // $this->modelMorph('AudiometriTest') => [
+            //     'name' => 'Tes Audiometri',
+            //     'ordering' => 3,
+            //     'type'    => 'Objective'
+            // ],
+            // $this->modelMorph('BloodSugarTest') => [
+            //     'name' => 'Tes Gula Darah',
+            //     'ordering' => 3,
+            //     'type'    => 'Plan'
+            // ],
+            // $this->modelMorph('ChildAndPregnancyHistory') => [
+            //     'name' => 'Anak dan Riwayat Persalinan',
+            //     'type'    => 'Subjective'
+            // ],
+            // $this->modelMorph('ChildGrowth') => [
+            //     'name' => 'Tumbuh Kembang Anak',
+            //     'type'    => 'Objective',
+            //     'form_has_survey' => [
+            //         "survey" => include(__DIR__ . '/data/forms/ChildGrowth.php')
+            //     ]
+            // ],
+            // $this->modelMorph('EarExamination') => [
+            //     'name' => 'Pemeriksaan Telinga',
+            //     'type'    => 'Objective'
+            // ],
+            // $this->modelMorph('EyeExamination') => [
+            //     "name" => "Pemeriksaan Mata Lengkap",
+            //     'type'    => 'Objective'
+            // ],
+            // $this->modelMorph('EyeRefractionExamination') => [
+            //     "name" => "Refraksi Mata",
+            //     'type'    => 'Objective'
+            // ],
+            // $this->modelMorph('EyeVisionColor') => [
+            //     "name" => "Pemeriksaan matan dan Color Vision",
+            //     'type'    => 'Objective'
+            // ],
+            // $this->modelMorph('FamilyPlanningService') => [
+            //     "name" => "Pelayanan KB",
+            //     'type'    => 'Plan'
+            // ],
+            // $this->modelMorph('Partus') => [
+            //     "name" => "Persalinan",
+            //     'type'    => 'Objective',
+            //     'form_has_survey' => [
+            //         "survey" => include(__DIR__ . '/data/forms/Partus.php')
+            //     ]
+            // ],
+            // $this->modelMorph('HearingFunction') => [
+            //     'name'    => 'PEMERIKSAAN FUNGSI PENDENGARAN',
+            //     'type' => 'Objective',
+            //     'form_has_survey' => [
+            //         "survey" => include(__DIR__ . '/data/forms/HearingFunction.php')
+            //     ]
+            // ],
+            // $this->modelMorph('HearingLossHistory') => [
+            //     'name' => 'Gangguan Pendengaran',
+            //     'type' => 'Objective'
+            // ],
+            // $this->modelMorph('HemoglobinTest') => [
+            //     "name" => "Pemeriksaan Hemoglobin (HB)",
+            //     'type' => 'Objective'
+            // ],
+            // $this->modelMorph('ImmunizationHistory') => [
+            //     "name" => "Riwayat Imunisasi",
+            //     'type' => 'Objective'
+            // ],
+            // $this->modelMorph('LarynxExamination') => [
+            //     'name' => 'Pemeriksaan Laring',
+            //     'type' => 'Objective'
+            // ],
+            // $this->modelMorph('MouthCavity') => [
+            //     'name'    => 'KEADAAN RONGGA MULUT',
+            //     'type'    => 'Objective',
+            //     'form_has_survey' => [
+            //         "survey" => include(__DIR__ . '/data/forms/MouthCavity.php')
+            //     ]
+            // ],
+            // $this->modelMorph('MouthCavityOther') => [
+            //     'name'    => 'KEADAAN GUSI, KEBERSIHAN GIGI,DAN KONDISI LAINNYA',
+            //     'type'    => 'Objective',
+            //     'form_has_survey' => [
+            //         "survey" => include(__DIR__ . '/data/forms/MouthCavityOther.php')
+            //     ]
+            // ],
+            // $this->modelMorph('NeonatalEsensial') => [
+            //     "name" => "Neonatal Esential",
+            //     'type'    => 'Objective',
+            //     'form_has_survey' => [
+            //         "survey" => include(__DIR__ . '/data/forms/NeonatalEsensial.php')
+            //     ] 
+            // ],
+            // $this->modelMorph('NewBornCheckUp') => [
+            //     'name'    => 'PEMERIKSAAN BAYI BARU LAHIR',
+            //     'type'    => 'Objective',
+            //     'form_has_survey' => [
+            //         "survey" => include(__DIR__ . '/data/forms/NewBornCheckUp.php')
+            //     ]
+            // ],
+            // $this->modelMorph('NoseExamination') => [
+            //     'name' => 'Pemeriksaan Hidung',
+            //     'type'    => 'Objective'
+            // ],
+            // $this->modelMorph('Odontogram') => [
+            //     'name' => 'Odontogram',
+            //     'type'    => 'Objective'
+            // ],
+            // $this->modelMorph('POPMHistory') => [
+            //     "name" => "Pemberian obat pencegahan massal cacingan (POPM)",
+            //     'type' => 'Objective'
+            // ],
             $this->modelMorph('PainScale') => [
                 'name' => 'Sekala Nyeri',
                 'type'    => 'Objective'
             ],
-            $this->modelMorph('PostpartumObservation') => [
-                'name'    => 'PELAYANAN KESEHATAN IBU NIFAS',
-                'type'    => 'Objective',
-                'form_has_survey' => [
-                    "survey" => include(__DIR__ . '/data/forms/PostpartumObservation.php')
-                ]
-            ],
+            // $this->modelMorph('PostpartumObservation') => [
+            //     'name'    => 'PELAYANAN KESEHATAN IBU NIFAS',
+            //     'type'    => 'Objective',
+            //     'form_has_survey' => [
+            //         "survey" => include(__DIR__ . '/data/forms/PostpartumObservation.php')
+            //     ]
+            // ],
             $this->modelMorph('Symptom') => [
                 'name' => 'Gejala & Keluhan',
                 'type'    => 'Subjective'
             ],
-            $this->modelMorph('TBContactHistory') => [
-                'name'    => 'PEMERIKSAAN RIWAYAT KONTAK TBC',
-                'type'    => 'Subjective',
-                'form_has_survey' => [
-                    "survey" => include(__DIR__ . '/data/forms/TBContactHistory.php')
-                ]
-            ],
-            $this->modelMorph('TBRiskFactor') => [
-                'name'    => 'FAKTOR RISIKO TBC',
-                'type'    => 'Subjective',
-                'form_has_survey' => [
-                    "survey" => include(__DIR__ . '/data/forms/TBRiskFactor.php')
-                ]
-            ],
-            $this->modelMorph('TTDExamination') => [
-                "name" => "Tablet Tambah Darah (TTD)",
-                'type'    => 'Subjective'
-            ],
+            // $this->modelMorph('TTDExamination') => [
+            //     "name" => "Tablet Tambah Darah (TTD)",
+            //     'type'    => 'Assessment'
+            // ],
             $this->modelMorph('TetanusImmunization') => [
                 "name" => "Riwayat Imunisasi Tetanus",
                 'type'    => 'Subjective'
@@ -215,22 +190,14 @@ class FormSeeder extends Seeder{
                     "survey" => include(__DIR__ . '/data/forms/ThoraxExamination.php')
                 ]
             ],
-            $this->modelMorph('ThroatExamination') => [
-                'name' => 'Pemeriksaan Tenggorokan',
-                'type'    => 'Objective'
-            ],
-            $this->modelMorph('Triage') => [
-                'name' => 'Triage',
-                'type'    => 'Objective'
-            ],
-            $this->modelMorph('Vaccine') => [
-                'name' => 'Riwayat Vaksinasi',
-                'type'    => 'Subjective'
-            ],
-            $this->modelMorph('VisualImpairmentTest') => [
-                "name" => "Formulir Gangguan Pengelihatan",
-                'type'    => 'Objective'
-            ],
+            // $this->modelMorph('ThroatExamination') => [
+            //     'name' => 'Pemeriksaan Tenggorokan',
+            //     'type'    => 'Objective'
+            // ],
+            // $this->modelMorph('VisualImpairmentTest') => [
+            //     "name" => "Formulir Gangguan Pengelihatan",
+            //     'type'    => 'Objective'
+            // ],
             $this->modelMorph('VitalSign') => [
                 'name' => 'Tanda Tanda Vital',
                 'type'    => 'Objective'
@@ -261,15 +228,7 @@ class FormSeeder extends Seeder{
             ],
             $this->modelMorph('ClinicalTreatment') => [
                 'name' => 'Tindakan Medis Poliklinik',
-                'type'    => 'Plan'
-            ],
-            $this->modelMorph('LabTreatment') => [
-                'name' => 'Pemeriksaan Lab',
-                'type'    => 'Plan'
-            ],
-            $this->modelMorph('RadiologyTreatment') => [
-                'name' => 'Pemeriksaan Radiology',
-                'type'    => 'Plan'
+                'type'    => 'Assessment'
             ],
             $this->modelMorph('Prescription') => [
                 'name' => 'Resep Obat',
@@ -280,7 +239,7 @@ class FormSeeder extends Seeder{
                 'type'    => 'Plan'
             ],
             $this->modelMorph('MixPrescription') => [
-                'name' => 'Resep BMHP',
+                'name' => 'Resep Racik',
                 'type'    => 'Plan'
             ]
         ];
