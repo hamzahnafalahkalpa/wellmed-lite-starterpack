@@ -24,7 +24,7 @@ class MasterSeeder extends Seeder{
                 // KlinikStarterpack\PatientTypeSeeder::class,
                 // KlinikStarterpack\PatientTypeServiceSeeder::class,
                 // KlinikStarterpack\MedicServiceSeeder::class,
-                // KlinikStarterpack\PaymentMethodSeeder::class,
+                KlinikStarterpack\PaymentMethodSeeder::class,
                 // KlinikStarterpack\ProfessionSeeder::class,
                 // KlinikStarterpack\OccupationSeeder::class,
                 FormSeeder::class,
