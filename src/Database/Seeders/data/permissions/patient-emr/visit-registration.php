@@ -11,7 +11,7 @@ return [
     'guard_name'      => 'api',
     'childs'          => [        
         [
-            'name'        => 'Kelola Kunjunga Pasien Poli', 
+            'name'        => 'Kelola Kunjungan Pasien Poli', 
             'alias'       => 'store',
             'type'        => Type::PERMISSION->value,
             'guard_name'  => 'api',
@@ -24,7 +24,7 @@ return [
             'guard_name'  => 'api'
         ],
         [
-            'name'         => 'Detail Kunjunga Pasien Poli', 
+            'name'         => 'Detail Kunjungan Pasien Poli', 
             'alias'        => 'show',
             'type'         => Type::PERMISSION->value,
             'guard_name'   => 'api',
