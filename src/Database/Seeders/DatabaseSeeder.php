@@ -15,12 +15,12 @@ class DatabaseSeeder extends Seeder
         try {
             $this->call([
                 WorkspaceSeeder::class,
-                // ApiAccessSeeder::class,
-                // MasterFeatureSeeder::class,
+                ApiAccessSeeder::class,
+                MasterFeatureSeeder::class,
                 PermissionSeeder::class,
-                RoleSeeder::class
-                // EncodingSeeder::class,
-                // MasterSeeder::class
+                RoleSeeder::class,
+                EncodingSeeder::class,
+                MasterSeeder::class
             ]);
         } catch (\Throwable $th) {
             dd($th->getMessage());
