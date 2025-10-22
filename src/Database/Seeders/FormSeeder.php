@@ -29,27 +29,27 @@ class FormSeeder extends Seeder{
             // ],
             $this->modelMorph('Allergy') => [
                 'name' => 'Riwayat Alergi Pasien',
-                'ordering' => 3,
+                'ordering' => 4,
                 'examination_key' => 'assessment',
                 'type' => 'Subjective'
             ],
-            $this->modelMorph('Alloanamnese') => [
-                'name' => 'Alloanamnese',
-                'ordering' => 1,
-                'examination_key' => 'assessment',
-                'type' => 'Subjective'
-            ],
-            $this->modelMorph('ANCTerpadu') => [
-                'name'    => 'ANC TERPADU',
-                'examination_key' => 'assessment',
-                'type'    => 'Subjective',
-                'form_has_survey' => [
-                    "survey" => include(__DIR__ . '/data/forms/ANCTerpadu.php')
-                ]
-            ],
+            // $this->modelMorph('Alloanamnese') => [
+            //     'name' => 'Alloanamnese',
+            //     'ordering' => 1,
+            //     'examination_key' => 'assessment',
+            //     'type' => 'Subjective'
+            // ],
+            // $this->modelMorph('ANCTerpadu') => [
+            //     'name'    => 'ANC TERPADU',
+            //     'examination_key' => 'assessment',
+            //     'type'    => 'Subjective',
+            //     'form_has_survey' => [
+            //         "survey" => include(__DIR__ . '/data/forms/ANCTerpadu.php')
+            //     ]
+            // ],
             $this->modelMorph('Anthropometry') => [
                 'name' => 'Anthropometry',
-                'ordering' => 2,
+                'ordering' => 3,
                 'examination_key' => 'assessment',
                 'type'    => 'Objective'
             ],
@@ -187,7 +187,8 @@ class FormSeeder extends Seeder{
             $this->modelMorph('PainScale') => [
                 'name' => 'Sekala Nyeri',
                 'examination_key' => 'assessment',
-                'type'    => 'Objective'
+                'type'    => 'Objective',
+                'ordering' => 2
             ],
             // $this->modelMorph('PostpartumObservation') => [
             //     'name'    => 'PELAYANAN KESEHATAN IBU NIFAS',
@@ -200,26 +201,27 @@ class FormSeeder extends Seeder{
             $this->modelMorph('Symptom') => [
                 'name' => 'Gejala & Keluhan',
                 'examination_key' => 'assessment',
-                'type'    => 'Subjective'
+                'type'    => 'Subjective',
+                'ordering' => 2
             ],
             // $this->modelMorph('TTDExamination') => [
             //     "name" => "Tablet Tambah Darah (TTD)",
             // 'examination_key' => 'treatments',
             //     'type'    => 'Assessment'
             // ],
-            $this->modelMorph('TetanusImmunization') => [
-                "name" => "Riwayat Imunisasi Tetanus",
-                'examination_key' => 'assessment',
-                'type'    => 'Subjective'
-            ],
-            $this->modelMorph('ThoraxExamination') => [
-                'name'    => 'PEMERIKSAAN FOTO THORAX',
-                'examination_key' => 'assessment',
-                'type'    => 'Objective',
-                'form_has_survey' => [
-                    "survey" => include(__DIR__ . '/data/forms/ThoraxExamination.php')
-                ]
-            ],
+            // $this->modelMorph('TetanusImmunization') => [
+            //     "name" => "Riwayat Imunisasi Tetanus",
+            //     'examination_key' => 'assessment',
+            //     'type'    => 'Subjective'
+            // ],
+            // $this->modelMorph('ThoraxExamination') => [
+            //     'name'    => 'PEMERIKSAAN FOTO THORAX',
+            //     'examination_key' => 'assessment',
+            //     'type'    => 'Objective',
+            //     'form_has_survey' => [
+            //         "survey" => include(__DIR__ . '/data/forms/ThoraxExamination.php')
+            //     ]
+            // ],
             // $this->modelMorph('ThroatExamination') => [
             //     'name' => 'Pemeriksaan Tenggorokan',
                 // 'examination_key' => 'assessment',
@@ -233,58 +235,101 @@ class FormSeeder extends Seeder{
             $this->modelMorph('VitalSign') => [
                 'name' => 'Tanda Tanda Vital',
                 'examination_key' => 'assessment',
-                'type'    => 'Objective'
+                'type'    => 'Objective',
+                'ordering' => 1
             ],
-            $this->modelMorph('InitialDiagnose') => [
-               'name'  => 'Diagnosa Awal/Masuk',
+            // $this->modelMorph('InitialDiagnose') => [
+            //    'name'  => 'Diagnosa Awal/Masuk',
+            //     'examination_key' => 'assessment',
+            //    'type'    => 'Objective'
+            // ],
+            $this->modelMorph('BasicDiagnose') => [
+                'name'  => 'Diagnosa',
                 'examination_key' => 'assessment',
-               'type'    => 'Objective'
+                'type'    => 'Objective',
+                'ordering' => 8
             ],
-            $this->modelMorph('PrimaryDiagnose') => [
-                'name'  => 'Diagnosa Primer',
-                'examination_key' => 'assessment',
-               'type'    => 'Objective'
-            ],
-            $this->modelMorph('SecondaryDiagnose') => [
-                'name'  => 'Diagnosa Sekunder',
-                'examination_key' => 'assessment',
-                'type'    => 'Objective'
-            ],
-            $this->modelMorph('HistoryIllness') => [
+            // $this->modelMorph('PrimaryDiagnose') => [
+            //     'name'  => 'Diagnosa Primer',
+            //     'examination_key' => 'assessment',
+            //    'type'    => 'Objective'
+            // ],
+            // $this->modelMorph('SecondaryDiagnose') => [
+            //     'name'  => 'Diagnosa Sekunder',
+            //     'examination_key' => 'assessment',
+            //     'type'    => 'Objective'
+            // ],
+            $this->modelMorph('PatientFamilyIllness') => [
                 'name' => 'Riwayat Penyakit Patient',
                 'examination_key' => 'assessment',
-                'type'    => 'Subjective'
+                'type'    => 'Subjective',
+                'ordering' => 4
             ],
-            $this->modelMorph('FamilyIllness') => [
-                'name' => 'Riwayat Penyakit Keluarga Patient',
-                'examination_key' => 'assessment',
-                'type'    => 'Subjective'
-            ],
+            // $this->modelMorph('HistoryIllness') => [
+            //     'name' => 'Riwayat Penyakit Patient',
+            //     'examination_key' => 'assessment',
+            //     'type'    => 'Subjective'
+            // ],
+            // $this->modelMorph('FamilyIllness') => [
+            //     'name' => 'Riwayat Penyakit Keluarga Patient',
+            //     'examination_key' => 'assessment',
+            //     'type'    => 'Subjective'
+            // ],
             $this->modelMorph('PhysicalExamination') => [
                 'name' => 'Pemeriksaan Fisik',
                 'examination_key' => 'assessment',
-                'type'    => 'Objective'
+                'type'    => 'Objective',
+                'ordering' => 5
             ],
             $this->modelMorph('ClinicalTreatment') => [
                 'name' => 'Tindakan Medis Poliklinik',
                 'examination_key' => 'treatments',
                 'type'    => 'Assessment'
             ],
-            $this->modelMorph('Prescription') => [
+            $this->modelMorph('BasicPrescription') => [
                 'name' => 'Resep Obat',
                 'examination_key' => 'prescriptions',
                 'type'    => 'Plan'
             ],
-            $this->modelMorph('MedicToolPrescription') => [
-                'name' => 'Resep BMHP',
-                'examination_key' => 'prescriptions',
-                'type'    => 'Plan'
+            $this->modelMorph('SubjectNote') => [
+                'name' => 'Catatan Subjektif',
+                'examination_key' => 'assessment',
+                'type'    => 'Subjective',
+                'ordering' => 99
             ],
-            $this->modelMorph('MixPrescription') => [
-                'name' => 'Resep Racik',
-                'examination_key' => 'prescriptions',
-                'type'    => 'Plan'
+            $this->modelMorph('ObjectNote') => [
+                'name' => 'Catatan Objektif',
+                'examination_key' => 'assessment',
+                'type'    => 'Objective',
+                'ordering' => 99
+            ],
+            $this->modelMorph('PlanNote') => [
+                'name' => 'Catatan Subjektif',
+                'examination_key' => 'assessment',
+                'type'    => 'Plan',
+                'ordering' => 99
+            ],
+            $this->modelMorph('AssessmentNote') => [
+                'name' => 'Catatan Assessment',
+                'examination_key' => 'assessment',
+                'type'    => 'Assessment',
+                'ordering' => 99
             ]
+            // $this->modelMorph('Prescription') => [
+            //     'name' => 'Resep Obat',
+            //     'examination_key' => 'prescriptions',
+            //     'type'    => 'Plan'
+            // ],
+            // $this->modelMorph('MedicToolPrescription') => [
+            //     'name' => 'Resep BMHP',
+            //     'examination_key' => 'prescriptions',
+            //     'type'    => 'Plan'
+            // ],
+            // $this->modelMorph('MixPrescription') => [
+            //     'name' => 'Resep Racik',
+            //     'examination_key' => 'prescriptions',
+            //     'type'    => 'Plan'
+            // ]
         ];
         $this->createForm($forms);
     }
