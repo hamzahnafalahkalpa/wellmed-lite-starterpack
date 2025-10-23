@@ -20,7 +20,8 @@ class DatabaseSeeder extends Seeder
                 // PermissionSeeder::class,
                 // RoleSeeder::class,
                 // EncodingSeeder::class,
-                MasterSeeder::class
+                // MasterSeeder::class,
+                AssetSeeder::class
             ]);
         } catch (\Throwable $th) {
             dd($th->getMessage());
