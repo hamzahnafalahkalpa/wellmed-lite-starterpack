@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
                 // ApiAccessSeeder::class,
                 // MasterFeatureSeeder::class,
                 PermissionSeeder::class,
-                // RoleSeeder::class,
+                RoleSeeder::class,
                 // EncodingSeeder::class,
                 // MasterSeeder::class,
                 // AssetSeeder::class
