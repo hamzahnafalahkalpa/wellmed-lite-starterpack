@@ -15,13 +15,13 @@ class DatabaseSeeder extends Seeder
         try {
             $this->call([
                 WorkspaceSeeder::class,
-                ApiAccessSeeder::class,
-                MasterFeatureSeeder::class,
+                // ApiAccessSeeder::class,
+                // MasterFeatureSeeder::class,
                 PermissionSeeder::class,
-                RoleSeeder::class,
-                EncodingSeeder::class,
-                MasterSeeder::class,
-                AssetSeeder::class
+                // RoleSeeder::class,
+                // EncodingSeeder::class,
+                // MasterSeeder::class,
+                // AssetSeeder::class
             ]);
         } catch (\Throwable $th) {
             throw $th;
