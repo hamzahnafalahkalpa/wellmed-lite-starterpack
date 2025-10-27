@@ -11,7 +11,8 @@ return [
     'guard_name'  => 'api',
     'ordering'    => 3,
     'childs'      => [
-        include __DIR__.'/item-management/medical-item.php',
+        include __DIR__.'/item-management/item.php',
+        // include __DIR__.'/item-management/medical-item.php',
     ]
 ];
 
