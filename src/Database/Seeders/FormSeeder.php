@@ -342,7 +342,6 @@ class FormSeeder extends Seeder{
         try {
             return $this->model($model)->getMorphClass();
         } catch (\Throwable $th) {
-            dd($model);
         }
     }
 
@@ -354,7 +353,6 @@ class FormSeeder extends Seeder{
                     $this->requestDTO(config('app.contracts.FormData'), $form),
                 );
             } catch (\Throwable $th) {
-                dd($th->getMessage());
                 throw $th;
             }
 

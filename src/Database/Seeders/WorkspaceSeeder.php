@@ -229,8 +229,6 @@ class WorkspaceSeeder extends Seeder{
             '--tenant_id' => $tenant->getKey()
         ]);
 
-        tenancy()->end();
         MicroTenant::tenantImpersonate($tenant);
-        tenancy()->initialize($tenant);
     }
 }

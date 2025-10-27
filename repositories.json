@@ -1,5 +1,40 @@
 {
     "repositories" : {
+        "wellmed-lite/ms-apotek": {
+            "type": "path",
+            "url": "features/ms-apotek",
+            "optimize" : {
+                "symlink": true
+            }
+        },
+        "wellmed-lite/ms-emr": {
+            "type": "path",
+            "url": "features/ms-emr",
+            "optimize" : {
+                "symlink": true
+            }
+        },
+        "wellmed-lite/ms-hr": {
+            "type": "path",
+            "url": "features/ms-hr",
+            "optimize" : {
+                "symlink": true
+            }
+        },
+        "wellmed-lite/ms-point-of-sale": {
+            "type": "path",
+            "url": "features/ms-point-of-sale",
+            "optimize" : {
+                "symlink": true
+            }
+        },
+        "wellmed-lite/ms-scm": {
+            "type": "path",
+            "url": "features/ms-scm",
+            "optimize" : {
+                "symlink": true
+            }
+        },
         "hanafalah/microtenant": {
             "type": "path",
             "url": "repositories/microtenant",
