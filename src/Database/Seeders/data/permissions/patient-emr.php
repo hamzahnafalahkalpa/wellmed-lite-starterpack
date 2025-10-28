@@ -12,7 +12,7 @@ return [
     'ordering'   => 1,
     'childs'     => [
         include(__DIR__.'/patient-emr/patient.php'),
-        include(__DIR__.'/patient-emr/visit-patient.php'),
+        // include(__DIR__.'/patient-emr/visit-patient.php'),
         include(__DIR__.'/patient-emr/visit-registration.php')
     ]
 ];
