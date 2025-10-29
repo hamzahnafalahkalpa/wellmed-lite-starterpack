@@ -11,8 +11,8 @@ return [
     'guard_name'  => 'api',
     'childs'      => [
         include __DIR__.'/faskes-service/patient-type.php',
-        include __DIR__.'/faskes-service/patient-type-service.php',
-        include __DIR__.'/faskes-service/service-label.php'
+        include __DIR__.'/faskes-service/patient-type-service.php'
+        // include __DIR__.'/faskes-service/service-label.php'
         // include __DIR__.'/faskes-service/master-consent.php'
     ]
 ];
