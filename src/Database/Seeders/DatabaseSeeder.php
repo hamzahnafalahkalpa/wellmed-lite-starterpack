@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
                 // MasterFeatureSeeder::class,
                 // PermissionSeeder::class,
                 // RoleSeeder::class,
-                // EncodingSeeder::class,
+                EncodingSeeder::class,
                 MasterSeeder::class,
                 AssetSeeder::class
             ]);
