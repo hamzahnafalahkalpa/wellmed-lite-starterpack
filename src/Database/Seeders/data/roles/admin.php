@@ -6,4 +6,5 @@ return [
     'api.setting.*',
     'api.patient-emr.*',
     'api.transaction.*',
+    'api.reporting.*'
 ];

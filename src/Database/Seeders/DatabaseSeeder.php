@@ -17,11 +17,11 @@ class DatabaseSeeder extends Seeder
                 WorkspaceSeeder::class,
                 // ApiAccessSeeder::class,
                 // MasterFeatureSeeder::class,
-                // PermissionSeeder::class,
-                // RoleSeeder::class,
-                EncodingSeeder::class,
-                MasterSeeder::class,
-                AssetSeeder::class
+                PermissionSeeder::class,
+                RoleSeeder::class,
+                // EncodingSeeder::class,
+                // MasterSeeder::class,
+                // AssetSeeder::class
             ]);
         } catch (\Throwable $th) {
             throw $th;
