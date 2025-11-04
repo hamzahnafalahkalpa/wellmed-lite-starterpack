@@ -15,7 +15,7 @@ return [
             'name'        => 'Rekap Data Pasien', 
             'alias'       => 'patient-report',
             'icon'        => 'mdi:report-line-shimmer',
-            'type'        => Type::MODULE->value,
+            'type'        => Type::PERMISSION->value,
             'show_in_acl' => true,
             'guard_name'  => 'api'
         ],
@@ -23,7 +23,7 @@ return [
             'name'        => 'Kunjungan Pasien', 
             'alias'       => 'visit-report',
             'icon'        => 'mdi:report-line-shimmer',
-            'type'        => Type::MODULE->value,
+            'type'        => Type::PERMISSION->value,
             'show_in_acl' => true,
             'guard_name'  => 'api'
         ],
@@ -31,7 +31,7 @@ return [
             'name'        => 'Transaksi Pasien', 
             'alias'       => 'patient-transaction-report',
             'icon'        => 'mdi:report-line-shimmer',
-            'type'        => Type::MODULE->value,
+            'type'        => Type::PERMISSION->value,
             'show_in_acl' => true,
             'guard_name'  => 'api'
         ],
@@ -39,7 +39,7 @@ return [
             'name'        => 'Rekap Pembayaran', 
             'alias'       => 'billing-report',
             'icon'        => 'mdi:report-line-shimmer',
-            'type'        => Type::MODULE->value,
+            'type'        => Type::PERMISSION->value,
             'show_in_acl' => true,
             'guard_name'  => 'api'
         ],
@@ -47,7 +47,7 @@ return [
             'name'        => 'Aktivitas Medis', 
             'alias'       => 'medical-activity-report',
             'icon'        => 'mdi:report-line-shimmer',
-            'type'        => Type::MODULE->value,
+            'type'        => Type::PERMISSION->value,
             'show_in_acl' => true,
             'guard_name'  => 'api'
         ],
@@ -55,7 +55,7 @@ return [
             'name'        => 'Refund dan Diskon', 
             'alias'       => 'refund-and-discount-report',
             'icon'        => 'mdi:report-line-shimmer',
-            'type'        => Type::MODULE->value,
+            'type'        => Type::PERMISSION->value,
             'show_in_acl' => true,
             'guard_name'  => 'api'
         ],
@@ -63,7 +63,7 @@ return [
             'name'        => 'Laporan Diagnosa', 
             'alias'       => 'diagnose-report',
             'icon'        => 'mdi:report-line-shimmer',
-            'type'        => Type::MODULE->value,
+            'type'        => Type::PERMISSION->value,
             'show_in_acl' => true,
             'guard_name'  => 'api'
         ],
@@ -71,7 +71,7 @@ return [
             'name'        => 'Kunjungan Belum Ditandatangani', 
             'alias'       => 'unsigned-visit-report',
             'icon'        => 'mdi:report-line-shimmer',
-            'type'        => Type::MODULE->value,
+            'type'        => Type::PERMISSION->value,
             'show_in_acl' => true,
             'guard_name'  => 'api'
         ]
