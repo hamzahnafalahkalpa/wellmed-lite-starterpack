@@ -16,6 +16,7 @@ use Hanafalah\WellmedLiteStarterpack\Concerns\HasComposer;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Str;
+use Projects\WellmedLite\Data\ModulePatient\IntegrationData;
 
 class WorkspaceSeeder extends Seeder{
     use HasRequestData, HasComposer;
@@ -104,6 +105,42 @@ class WorkspaceSeeder extends Seeder{
                         'owner' => [
                             'id' => null,
                             'name' => null
+                        ]
+                    ]),
+                    'integration' => IntegrationData::from([
+                        "satu_sehat" => [
+                            "progress" => 0,
+                            "syncs" => [
+                                [
+                                    'flag' => 'encounter',
+                                    'label' => 'Kunjungan',
+                                ],
+                                [
+                                    'flag' => 'condition',
+                                    'label' => 'Diagnosa',
+                                ], 
+                                [
+                                    'flag' => 'dispense',
+                                    'label' => 'Resep',
+                                ]
+                            ]
+                        ],
+                        "bpjs" => [
+                            "progress" => 0,
+                            "syncs" => [
+                                [
+                                    'flag' => 'encounter',
+                                    'label' => 'Kunjungan',
+                                ],
+                                [
+                                    'flag' => 'condition',
+                                    'label' => 'Diagnosa',
+                                ], 
+                                [
+                                    'flag' => 'dispense',
+                                    'label' => 'Resep',
+                                ]
+                            ]
                         ]
                     ])
                 ])
@@ -214,8 +251,6 @@ class WorkspaceSeeder extends Seeder{
         // shell_exec("cd $tenant_path/".Str::kebab($tenant->name)." && rm -rf composer.lock && composer install");
         // tenancy()->end();
         // MicroTenant::tenantImpersonate($tenant);
-        // tenancy()->initialize($tenant);
-
         Artisan::call('impersonate:cache',[
             '--app_id'    => $project_tenant->getKey(),
             '--group_id'  => $group_tenant->getKey(),
