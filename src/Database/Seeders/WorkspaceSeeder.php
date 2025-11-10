@@ -85,31 +85,34 @@ class WorkspaceSeeder extends Seeder{
                 'tenancy.database.central_connection' => $default
             ]);
 
-            $workspace = app(config('app.contracts.Workspace'))->prepareStoreWorkspace(WorkspaceData::from([
-                'uuid'    => '9e7ff0f6-7679-46c8-ac3e-71da818160ee',
-                'name'    => 'Wellmed Lite',
-                'status'  => Status::ACTIVE->value,
-                'product_type'   => 'WELLMED_LITE',
-                'props'   => WorkspacePropsData::from([
-                    'setting' => WorkspaceSettingData::from([
-                        'address' => AddressData::from([
+            $workspace = app(config('app.contracts.Workspace'))->prepareStoreWorkspace($this->requestDTO(
+                config('app.contracts.WorkspaceData'),[
+                    'uuid'    => '9e7ff0f6-7679-46c8-ac3e-71da818160ee',
+                    'name'    => 'Wellmed Lite',
+                    'status'  => Status::ACTIVE->value,
+                    'product_type'   => 'WELLMED_LITE',
+                    'setting' => [
+                        'address' => [
                             'name'           => 'sangkuriang',
-                            'province_id'    => null,
-                            'district_id'    => null,
-                            'subdistrict_id' => null,
-                            'village_id'     => null
-                        ]),
+                            'province_id'    => 1,
+                            'district_id'    => 1,
+                            'subdistrict_id' => 1,
+                            'village_id'     => 1
+                        ],
                         'email'   => 'hamzahnuralfalah@gmail.com',
-                        'phone'   => '0819-0652-1808',
+                        'phone'   => '081906521808',
                         'owner_id' => null,
                         'owner' => [
                             'id' => null,
                             'name' => null
                         ]
-                    ]),
-                    'integration' => IntegrationData::from([
+                    ],
+                    'integration' => [
                         "satu_sehat" => [
                             "progress" => 0,
+                            "general" => [
+                                "ihs_number" => null
+                            ],
                             "syncs" => [
                                 [
                                     'flag' => 'encounter',
@@ -142,9 +145,10 @@ class WorkspaceSeeder extends Seeder{
                                 ]
                             ]
                         ]
-                    ])
-                ])
-            ]));
+                    ],
+                    
+                ]
+            ));
 
             $tenant = $tenant_schema->prepareStoreTenant($this->requestDTO(TenantData::class,[
                 'parent_id'      => $group_tenant->getKey(),
@@ -205,52 +209,6 @@ class WorkspaceSeeder extends Seeder{
         $project_tenant->setAttribute('packages',$package_providers);
         $project_tenant->save();
 
-        // $composer = $tenant_path.'/'.Str::kebab($tenant->name).'/composer.json';
-        // if (!file_exists($composer)){
-        //     Artisan::call('micro:add-package',[
-        //         'namespace' => $group_namespace.'\\'.Str::studly($tenant->name),
-        //         '--package-author' => 'Hamzah Nur Alfalah',
-        //         '--package-email' => 'hamzahnafalah@gmail.com',
-        //         '--pattern' => 'tenant',
-        //         '--main-id' => $tenant->getKey()
-        //     ]);
-        // }
-
-        // if (config('app.env') == 'local'){
-        //     file_put_contents(__DIR__.'/../../tenant-repositories.json', json_encode($repositories, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
-        //     $this->updateComposer($composer, __DIR__.'/../../tenant-repositories.json','repositories');
-        // }
-
-        // $composer = $group_tenant->path.'/'.Str::kebab($group_tenant->name).'/composer.json';
-        // if (!file_exists($composer)){
-        //     Artisan::call('micro:add-package',[
-        //         'namespace' => $group_namespace.'\\'.Str::studly($group_tenant->name),
-        //         '--package-author' => 'Hamzah Nur Alfalah',
-        //         '--package-email' => 'hamzahnafalah@gmail.com',
-        //         '--pattern' => 'group',
-        //         '--main-id' => $group_tenant->getKey()
-        //     ]);
-        // }
-
-        // $composer = $project_tenant->path.'/'.Str::kebab($project_tenant->name).'/composer.json';
-        // if (!file_exists($composer)){
-        //     Artisan::call('micro:add-package',[
-        //         'namespace' => $project_namespace.'\\'.$group_namespace,
-        //         '--package-author' => 'Hamzah Nur Alfalah',
-        //         '--package-email' => 'hamzahnafalah@gmail.com',
-        //         '--pattern' => 'project',
-        //         '--main-id' => $project_tenant->getKey()
-        //     ]);
-        // }
-        
-        // if (config('app.env') == 'local'){
-        //     file_put_contents(__DIR__.'/../../project-requirements.json', json_encode($requires, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
-        //     $this->updateComposer($composer, __DIR__.'/../../project-requirements.json','require');
-        // }
-
-        // shell_exec("cd $tenant_path/".Str::kebab($tenant->name)." && rm -rf composer.lock && composer install");
-        // tenancy()->end();
-        // MicroTenant::tenantImpersonate($tenant);
         Artisan::call('impersonate:cache',[
             '--app_id'    => $project_tenant->getKey(),
             '--group_id'  => $group_tenant->getKey(),
