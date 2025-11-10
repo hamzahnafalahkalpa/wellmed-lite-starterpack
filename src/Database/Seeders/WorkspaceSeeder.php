@@ -94,10 +94,10 @@ class WorkspaceSeeder extends Seeder{
                     'setting' => [
                         'address' => [
                             'name'           => 'sangkuriang',
-                            'province_id'    => 1,
-                            'district_id'    => 1,
-                            'subdistrict_id' => 1,
-                            'village_id'     => 1
+                            'province_id'    => null,
+                            'district_id'    => null,
+                            'subdistrict_id' => null,
+                            'village_id'     => null
                         ],
                         'email'   => 'hamzahnuralfalah@gmail.com',
                         'phone'   => '081906521808',
