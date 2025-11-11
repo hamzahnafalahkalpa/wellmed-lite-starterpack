@@ -53,7 +53,7 @@ class WorkspaceSeeder extends Seeder{
                 'packages'       => [],
                 'has_group'      => true,
                 'has_tenant'     => true,
-                'product_type'   => 'WELLMED_LITE',
+                'product_type'   => 'LITE',
                 'config'         => $generator_config['patterns']['project']
             ]));
 
@@ -73,7 +73,7 @@ class WorkspaceSeeder extends Seeder{
                 'app'            => ['provider' => $project_tenant->provider],
                 'path'           => $generator_config['patterns']['group']['published_at'],
                 'has_tenant'     => true,
-                'product_type'   => 'WELLMED_LITE',
+                'product_type'   => 'LITE',
                 'packages'       => [],
                 'config'         => $generator_config['patterns']['group']
             ]));
@@ -87,7 +87,7 @@ class WorkspaceSeeder extends Seeder{
                     'uuid'    => '9e7ff0f6-7679-46c8-ac3e-71da818160ee',
                     'name'    => 'Wellmed Lite',
                     'status'  => Status::ACTIVE->value,
-                    'product_type'   => 'WELLMED_LITE',
+                    'product_type'   => 'LITE',
                     'setting' => [
                         'address' => [
                             'name'           => 'sangkuriang',
@@ -161,6 +161,10 @@ class WorkspaceSeeder extends Seeder{
                 'app'      => ['provider' => $project_tenant->provider],
                 'group'    => ['provider' => $group_tenant->provider],
                 'packages' => [],
+                'product_type'   => 'LITE',
+                'recurring_payment' => 'MONTHLY',
+                'started_at' => now(),
+                'expired_at' => now()->addYear(),
                 'config'   => $generator_config['patterns']['tenant']
             ]));
             $tenant->db_name = $tenant->tenancy_db_name;
