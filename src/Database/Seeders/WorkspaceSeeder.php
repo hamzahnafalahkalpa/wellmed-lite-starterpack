@@ -26,19 +26,18 @@ class WorkspaceSeeder extends Seeder{
      */
     public function run(): void
     {
+        config(['database.connections.tenant'=>config('database.connections.central')]);
         $workspace = app(config('database.models.Workspace'))->uuid('9e7ff0f6-7679-46c8-ac3e-71da818160ee')->first();        
         $generator_config = config('laravel-package-generator');
         $project_namespace = 'Projects';
         $group_namespace   = 'WellmedLite';
         if (!isset($workspace)){
             $tenant_namespace  = 'WellmedLiteGroup';
-
             $db_tenant_name = config('micro-tenant.database.database_tenant_name');
             $default = config('tenancy.database.central_connection');
             config([
                 'tenancy.database.prefix' => 'lite_',
-                'tenancy.database.suffix' => '',
-                'tenancy.database.central_connection' => 'central_app'
+                'tenancy.database.suffix' => ''
             ]);
 
             $tenant_schema  = app(config('app.contracts.Tenant'));
@@ -61,8 +60,7 @@ class WorkspaceSeeder extends Seeder{
             $database_tenant_name = config('micro-tenant.database.central_tenant');
             config([
                 'tenancy.database.prefix' => $database_tenant_name['prefix'],
-                'tenancy.database.suffix' => $database_tenant_name['suffix'],
-                'tenancy.database.central_connection' => 'central_tenant'
+                'tenancy.database.suffix' => $database_tenant_name['suffix']
             ]);
 
             $group_tenant = $tenant_schema->prepareStoreTenant($this->requestDTO(TenantData::class,[
@@ -81,8 +79,7 @@ class WorkspaceSeeder extends Seeder{
             ]));
             config([
                 'tenancy.database.prefix' => $db_tenant_name['prefix'],
-                'tenancy.database.suffix' => $db_tenant_name['suffix'],
-                'tenancy.database.central_connection' => $default
+                'tenancy.database.suffix' => $db_tenant_name['suffix']
             ]);
 
             $workspace = app(config('app.contracts.Workspace'))->prepareStoreWorkspace($this->requestDTO(
@@ -174,7 +171,6 @@ class WorkspaceSeeder extends Seeder{
             $project_tenant = $group_tenant->parent;
         }
         $tenant_path = $generator_config['patterns']['tenant']['published_at'];
-
         $providers = config('wellmed-lite-starterpack.packages');
         $providers = array_keys($providers);
         $package_providers = [];
