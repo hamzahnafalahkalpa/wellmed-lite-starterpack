@@ -68,10 +68,12 @@ class InstallMakeCommand extends EnvironmentCommand
         ]);
         $this->info('✔️  Created migrations');
 
-        // $this->call('down');
+        $direct_access = config('micro-tenant.direct_provider_access');
+        config(['micro-tenant.direct_provider_access' => false]);
         $this->call('migrate');
         $this->call('db:seed');
-        // $this->call('up');
+        config(['micro-tenant.direct_provider_access' => $direct_access]);
+
         $this->info('Wellmed Lite Starterpack Seeding');
         $this->call('wellmed-lite-starterpack:seed');
         $this->info('✔️  Wellmed Lite Starterpack Seeded');
