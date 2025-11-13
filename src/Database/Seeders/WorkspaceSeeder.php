@@ -146,7 +146,7 @@ class WorkspaceSeeder extends Seeder{
                     
                 ]
             ));
-
+            
             $tenant = $tenant_schema->prepareStoreTenant($this->requestDTO(TenantData::class,[
                 'parent_id'      => $group_tenant->getKey(),
                 'name'           => 'Tenant Wellmed Lite',
@@ -162,7 +162,8 @@ class WorkspaceSeeder extends Seeder{
                 'group'    => ['provider' => $group_tenant->provider],
                 'packages' => [],
                 'product_type'   => 'LITE',
-                'recurring_payment' => 'MONTHLY',
+                'is_recurring' => true,
+                'recurring_period' => 'MONTHLY',
                 'started_at' => now(),
                 'expired_at' => now()->addYear(),
                 'config'   => $generator_config['patterns']['tenant']
