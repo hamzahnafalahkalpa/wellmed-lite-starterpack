@@ -185,7 +185,7 @@ class FormSeeder extends Seeder{
             //     'type' => 'Objective'
             // ],
             $this->modelMorph('PainScale') => [
-                'name' => 'Sekala Nyeri',
+                'name' => 'Skala Nyeri',
                 'examination_key' => 'assessment',
                 'type'    => 'Objective',
                 'ordering' => 2
@@ -304,7 +304,7 @@ class FormSeeder extends Seeder{
                 'ordering' => 99
             ],
             $this->modelMorph('PlanNote') => [
-                'name' => 'Catatan Subjektif',
+                'name' => 'Catatan Plan',
                 'examination_key' => 'assessment',
                 'type'    => 'Plan',
                 'ordering' => 99
